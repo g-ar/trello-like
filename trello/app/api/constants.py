@@ -1,0 +1,42 @@
+from rest_framework.status import *
+
+MAX_NAME_LENGTH     = 80
+MIN_NAME_LENGTH     = 3
+MAX_EMAIL_LENGTH    = 80
+MIN_PASSWORD_LENGTH = 5
+MAX_PASSWORD_LENGTH = 80
+LIST_ID_LENGTH      = 80
+CARD_ID_LENGTH      = 80
+BOARD_ID_LENGTH     = 80
+CARD_DESC_LENGTH    = 800
+LIST_ID_LENGTH      = 80
+TOKEN_LENGTH        = 40
+LIST_ID             = "list_id"
+LIST_IDS            = "list_ids"
+LIST_NAME           = "list_name"
+CARD_ID             = "card_id"
+CARD_IDS            = "card_ids"
+CARD_NAME           = "card_name"
+CARD_DESC           = "card_desc"
+CARD_DUE_DATE       = "card_due_date"
+CARD_STATUS         = "card_status"
+BOARDS              = "boards"
+BOARD_ID            = "board_id"
+BOARD_IDS           = "board_ids"
+BOARD_NAME          = "board_name"
+BOARD_NAMES         = "board_names"
+HASH_METHOD         = "sha1"
+PASSWORD            = "password"
+PASSWORD_HASH       = "password_hash"
+USER_ID             = "user_id"
+EMAIL_ID            = "email"
+USER_NAME           = "user_name"
+FIELDS              = "fields"
+TOKEN               = "HTTP_TOKEN"
+
+HTTP_METHOD_POST    = "POST"
+HTTP_METHOD_GET     = "GET"
+HTTP_METHOD_OPTION  = "OPTION"
+HTTP_METHOD_PUT     = "PUT"
+HTTP_METHOD_HEAD    = "HEAD"
+HTTP_METHOD_DELETE  = "DELETE"
