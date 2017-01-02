@@ -15,9 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from app.api.views.index import IndexView
-# from app.api.views.userview import UserView
 from app.api.views.registerview import RegisterView
-# from app.api.views.tokenview import TokenView
 from app.api.views.loginview import LoginView
 from app.api.views.boardview import BoardView
 from app.api.views.listview import ListView
