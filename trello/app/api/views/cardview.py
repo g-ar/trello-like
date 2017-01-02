@@ -6,7 +6,9 @@ from app.api.constants import *
 from app.api.libraries.customresponse import CustomResponse
 
 from app.api.libraries.cardlib import CardLib
+from app.api.libraries.listlib import ListLib
 from app.models import Cards
+from app.models import Lists
 
 
 """
@@ -19,6 +21,7 @@ from app.models import Cards
 }
 """
 card_lib = CardLib()
+list_lib = ListLib()
 
 class CardView( generics.GenericAPIView, mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin):
     model = Cards
