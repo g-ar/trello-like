@@ -277,136 +277,132 @@ APIs
         }
 
 - ``GET``
+    Retrieves all the lists that are visible for the logged in user
 
-Retrieves all the lists that are visible for the logged in user
+  - Request
 
-- Request
+    .. code:: text
+        
 
-  .. code:: text
-      
+        Token: <the token>
 
-      Token: <the token>
+  - Response
 
-- Response
+    .. code:: js
+        
 
-  .. code:: js
-      
-
-      {
-        "success": true,
-        "payload": [
-          {
-            "list_id": 2,
-            "card_ids": "[2]",
-            "list_name": "Doing"
-          },
-          {
-            "list_id": 3,
-            "card_ids": "[3]",
-            "list_name": "Doing"
-          }
-        ],
-        "message": "List details"
-      }
+        {
+          "success": true,
+          "payload": [
+            {
+              "list_id": 2,
+              "card_ids": "[2]",
+              "list_name": "Doing"
+            },
+            {
+              "list_id": 3,
+              "card_ids": "[3]",
+              "list_name": "Doing"
+            }
+          ],
+          "message": "List details"
+        }
 
 - ``PUT``
+    Can be used to update the list entries
 
-Can be used to update the list entries
+  - Request
 
-- Request
+    .. code:: text
+        
 
-  .. code:: text
-      
+        Content-Type: application/json
+        Token: <the token>
 
-      Content-Type: application/json
-      Token: <the token>
+    .. code:: js
+        
 
-  .. code:: js
-      
+        {
+          "list_id": 2,
+          "list_name": "Done"
+        }
 
-      {
-        "list_id": 2,
-        "list_name": "Done"
-      }
+  - Response
 
-- Response
+    .. code:: js
+        
 
-  .. code:: js
-      
-
-      {
-        "success": true,
-        "payload": null,
-        "message": "List updated"
-      }
+        {
+          "success": true,
+          "payload": null,
+          "message": "List updated"
+        }
 
 - ``DELETE``
+    Used to delete the entries in the database
 
-Used to delete the entries in the database
+  - Request
 
-- Request
+    .. code:: text
+        
 
-  .. code:: text
-      
+        Content-Type: application/json
+        Token: <the token>
 
-      Content-Type: application/json
-      Token: <the token>
+    .. code:: js
+        
 
-  .. code:: js
-      
+        {
+          "list_ids": [1, 2],
+          "board_id": 1
+        }
 
-      {
-        "list_ids": [1, 2],
-        "board_id": 1
-      }
+  - Response
 
-- Response
+    .. code:: js
+        
 
-  .. code:: js
-      
-
-      {
-        "success": true,
-        "payload": null,
-        "message": "Lists deleted"
-      }
+        {
+          "success": true,
+          "payload": null,
+          "message": "Lists deleted"
+        }
 
 ``card/``
 ~~~~~~~~~
 
 - ``POST``
+    Add a new card entry by posting the details. ``list_id`` indicates the list it's part of.
 
-Add a new card entry by posting the details. ``list_id`` indicates the list it's part of.
+  - Request
 
-- Request
+    .. code:: text
+        
 
-  .. code:: text
-      
+        Content-Type: application/json
+        Token: <the token>
 
-      Content-Type: application/json
-      Token: <the token>
+    .. code:: js
+        
 
-  .. code:: js
-      
+        {
+          "card_name": "Authentication",
+          "card_desc": "Providing basic token authentication",
+          "card_due_date": "2017-01-10",
+          "card_status": false,
+          "list_id": 2
+        }
 
-      {
-        "card_name": "Authentication",
-        "card_desc": "Providing basic token authentication",
-        "card_due_date": "2017-01-10",
-        "card_status": false,
-        "list_id": 2
-      }
+  - Response
 
-- Response
+    .. code:: js
+        
 
-  .. code:: js
-      
-
-      {
-        "success": true,
-        "payload": null,
-        "message": "Card added"
-      }
+        {
+          "success": true,
+          "payload": null,
+          "message": "Card added"
+        }
 
 - ``GET``
 
@@ -474,35 +470,34 @@ Add a new card entry by posting the details. ``list_id`` indicates the list it's
         }
 
 - ``DELETE``
+    Delete the card ids that are part of the list id, given in the message body
 
-Delete the card ids that are part of the list id, given in the message body
+  - Request
 
-- Request
+    .. code:: text
+        
 
-  .. code:: text
-      
+        Content-Type: application/json
+        Token: <the token>
 
-      Content-Type: application/json
-      Token: <the token>
+    .. code:: js
+        
 
-  .. code:: js
-      
+        {
+          "card_ids": [4, 5],
+          "list_id": 3
+        }
 
-      {
-        "card_ids": [4, 5],
-        "list_id": 3
-      }
+  - Response
 
-- Response
+    .. code:: js
+        
 
-  .. code:: js
-      
-
-      {
-        "success": true,
-        "payload": null,
-        "message": "Cards deleted"
-      }
+        {
+          "success": true,
+          "payload": null,
+          "message": "Cards deleted"
+        }
 
 Database Tables
 ---------------
